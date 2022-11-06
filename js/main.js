@@ -48,3 +48,43 @@ function addGrid (cellNum,container){
     }
     userPoints.classList.remove("d-none"); 
 }
+function bombGen (bombNum,cellNum){
+    bombs=[];
+    while(bombs.length<bombNum){
+        let bomb = Math.floor(Math.random() * (cellNum - 1 + 1) ) + 1;
+        if(!(bombs.includes(bomb))){
+            bombs.push(bomb);
+        }
+    } 
+}
+function endGame(){
+    for (let index = 0; index < boardCells.length; index++) {
+        if(bombs.includes(Number(boardCells[index].innerHTML))){
+            boardCells[index].classList.add("red");
+        }else{
+            boardCells[index].classList.add("light-blue");
+        }
+    }
+    return true;
+}
+
+let bombs=[];
+const boardCells=[];
+const board=document.querySelector(".board");
+const btn=document.getElementById("btn");
+let cells=0;
+btn.addEventListener("click",function(){
+    board.innerHTML="";
+    let difficulty=document.getElementById("difficulty").value;
+    board.classList.remove("d-none");
+    if (difficulty==="easy"){
+        cells=100;
+    }else if(difficulty==="normal"){
+        cells=81;
+    }else{
+        cells=49;
+    }
+    bombGen (16,cells);
+    console.log(bombs)
+    addGrid (cells,board);
+});
