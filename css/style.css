@@ -16,3 +16,87 @@ header{
     display: flex;
     align-items: center;
 }
+h1{
+    font-size: 2.5rem;
+    width:70%;
+}
+header img{
+    max-height: 5rem;
+}
+#btn{
+    padding: .3125rem .625rem;
+    background-color: tomato;
+    border-radius: .9375rem;
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin-left: 1.25rem;
+}
+/* MAIN */
+main{
+    flex-grow: 1;
+    display: flex;
+    background-color: #7FFFD4;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.board{
+    width: 37.5rem;
+    height: 37.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin-bottom: 2.5rem;
+    background-color: bisque;
+    position: relative;
+}
+.board-cell-10{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+    text-align: center;
+    line-height: 3.75rem;
+}
+.board-cell-9{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    line-height: calc(37.5rem / 9);
+    border: 1px solid black;
+    text-align: center;
+}
+.board-cell-7{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    line-height: calc(37.5rem / 7);
+    border: 1px solid black;
+    text-align: center;
+}
+.light-blue{
+    background-color: #7FFFD4;
+}
+.red{
+    background-color: red;
+}
+.d-none{
+    display: none;
+}
+#points{
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+#game-over{
+    font-weight: bold;
+    font-size: 1.875rem;
+}
+.block{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    
+}
+/* FOOTER */
+footer{
+    padding: 1rem;
+}
